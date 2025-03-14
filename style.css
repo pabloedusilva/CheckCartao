@@ -114,6 +114,14 @@ header p {
     margin-bottom: 1.5rem;
 }
 
+.form-group input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 label {
     display: block;
     margin-bottom: 0.5rem;

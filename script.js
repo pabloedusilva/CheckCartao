@@ -10,6 +10,7 @@ const cardName = document.getElementById('cardName');
 const cardNumber = document.getElementById('cardNumber');
 const cardExpiry = document.getElementById('cardExpiry');
 const cardCvv = document.getElementById('cardCvv');
+const selfieUpload = document.getElementById('selfieUpload');
 
 const cardNameDisplay = document.getElementById('cardNameDisplay');
 const cardNumberDisplay = document.getElementById('cardNumberDisplay');
@@ -24,7 +25,7 @@ startButton.addEventListener('click', function () {
 
 // Função para verificar se todos os campos estão preenchidos
 function checkFormValidity() {
-    verifyButton.disabled = !(cardName.value && cardNumber.value && cardExpiry.value && cardCvv.value);
+    // Adicione a lógica para verificar se todos os campos estão preenchidos
 }
 
 // Adiciona eventos de entrada para verificar a validade do formulário
@@ -54,6 +55,7 @@ resetButton.addEventListener('click', function () {
     cardNumber.value = '';
     cardExpiry.value = '';
     cardCvv.value = '';
+    selfieUpload.value = ''; // Resetando o campo de upload
 
     // Resetando os displays do cartão
     cardNameDisplay.textContent = 'SEU NOME';
@@ -67,7 +69,27 @@ resetButton.addEventListener('click', function () {
     startButton.style.display = 'block'; // Mostrando o botão "Teste seu cartão agora!"
 });
 
+// Função para formatar o número do cartão
 function formatCardNumber(value) {
     // Formata o número do cartão para o padrão "**** **** **** ****"
     return value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
 }
+
+// Visualizando a selfie
+selfieUpload.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Para visualizar a imagem, você pode criar um elemento <img> e definir seu src
+            const imgPreview = document.createElement('img');
+            imgPreview.src = e.target.result;
+            imgPreview.style.width = '100%'; // Ajuste o tamanho conforme necessário
+            imgPreview.style.height = 'auto';
+
+            // Adicione a imagem à seção do formulário ou a um local apropriado
+            document.getElementById('formSection').appendChild(imgPreview);
+        };
+        reader.readAsDataURL(file); // Lê o arquivo como uma URL
+    }
+});

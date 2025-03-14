@@ -14,7 +14,6 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
     background-color: var(--light);
     color: var(--dark);
@@ -54,26 +53,6 @@ header p {
     justify-content: center;
     padding: 3rem 0;
     text-align: center;
-}
-
-.detective-img {
-    width: 200px;
-    height: 200px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.detective-img::after {
-    content: "🔍";
-    position: absolute;
-    font-size: 80px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .btn {
@@ -289,6 +268,18 @@ footer {
 
 .animate-fade {
     animation: fadeIn 0.8s ease-in-out;
+}
+#removeImageButton {
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: red; /* Define a cor do texto como vermelho */
+    text-decoration: underline; /* Sublinha o texto */
+    font-size: 14px; /* Define um tamanho de fonte pequeno */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding: 0; /* Remove o padding */
+    margin: 0; /* Remove a margem */
+    display: inline; /* Garante que o botão se comporte como um texto normal */
+    outline: none; /* Remove o contorno ao focar */
 }
 
 @keyframes fadeIn {

@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckCartao</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Você é um alvo fácil para os hackers?</h1>
+            <p>Verifique se seu cartão foi clonado inserindo os dados solicitados abaixo:</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero animate-fade">
+            <img src="https://cdn-icons-png.flaticon.com/512/564/564631.png" alt="verificado" style="width: 100px; height: auto; padding-bottom: 10%;">
+            <h2>Será que seus dados do cartão estão seguros?</h2>
+            <p>Verifique clicando no botão abaixo 👇</p>
+            <button id="startButton" class="btn">Verifique seu cartão agora! </button>
+        </section>
+
+        <section id="formSection" class="animate-fade">
+            <h2>Digite os dados do seu cartão:</h2>
+            <p style="text-align: center; margin-bottom: 1rem; color: #888;">*Fique tranquilo, seus dados estão seguros e protegidos.</p>
+
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="card-front">
+                        <div class="card-chip"></div>
+                        <div class="card-number" id="cardNumberDisplay">**** **** **** ****</div>
+                        <div class="card-details">
+                            <div>
+                                <div style="font-size: 0.8rem;">TITULAR</div>
+                                <div id="cardNameDisplay">SEU NOME</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem;">VALIDADE</div>
+                                <div id="cardExpiryDisplay">MM/AA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-magnetic"></div>
+                        <div>
+                            <div style="font-size: 0.8rem; text-align: right; margin-bottom: 5px;">CVV</div>
+                            <div class="card-cvv" id="cardCvvDisplay">***</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="cardForm">
+                <div class="form-group">
+                    <label for="cardName">Nome no Cartão</label>
+                    <input type="text" id="cardName" placeholder="Digite o nome como aparece no cartão">
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNumber">Número do Cartão</label>
+                    <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cardExpiry">Data de Validade</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cardCvv">CVV</label>
+                        <input type="text" id="cardCvv" placeholder="000" maxlength="3">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Verificar Cartão</button>
+            </form>
+        </section>
+
+        <section id="resultSection" class="animate-fade">
+            <div class="result-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/6785/6785410.png" alt="verificado" style="width: 100px; height: auto;">
+            </div>
+            <h2 class="success-message">Seu cartão está seguro e não foi clonado.</h2>
+            <p>Não se preocupe, seus dados estão 100% seguros!</p>
+
+            <div class="tips">
+                <h3>Dicas de Segurança:</h3>
+                <ul>
+                    <li>Nunca digite dados de cartão em sites desconhecidos</li>
+                    <li>Desconfie de ofertas muito vantajosas</li>
+                    <li>Use cartões virtuais para compras online</li>
+                    <li>Monitore regularmente suas faturas</li>
+                </ul>
+            </div>
+
+            <button id="resetButton" class="btn" style="margin-top: 2rem; background-color: var(--dark);">Voltar ao início</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="disclaimer">
+                <h3>AVISO IMPORTANTE</h3>
+                <p>Estamos comprometidos em oferecer a você uma experiência segura e confiável. Informamos que este site é 100% seguro. Utilizamos tecnologia de criptografia avançada para proteger suas informações pessoais e financeiras, garantindo que seus dados estejam sempre protegidos contra acessos não autorizados.</p>
+            </div>
+
+            <p>Recursos sobre Segurança Financeira:</p>
+            <div class="resources">
+                <a href="#">Guia de Segurança Digital</a>
+                <a href="#">Como Proteger seus Dados</a>
+                <a href="#">Reportar Fraudes</a>
+            </div>
+
+            <p style="margin-top: 2rem;">&copy; 2025 - Teste de Clonagem de Cartão</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 

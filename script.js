@@ -59,9 +59,9 @@ resetButton.addEventListener('click', function () {
 
     // Resetando os displays do cartão
     cardNameDisplay.textContent = 'SEU NOME';
-    cardNumberDisplay.textContent = '**** **** **** ****';
+    cardNumberDisplay.textContent = '**** **** **** **';
     cardExpiryDisplay.textContent = 'MM/AA';
-    cardCvvDisplay.textContent = '***';
+    cardCvvDisplay.textContent = '*';
 
     // Ocultando a seção de resultados e mostrando o formulário novamente
     resultSection.style.display = 'none';
@@ -81,15 +81,20 @@ selfieUpload.addEventListener('change', function (event) {
     if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            // Para visualizar a imagem, você pode criar um elemento <img> e definir seu src
-            const imgPreview = document.createElement('img');
+            const imgPreview = document.getElementById('imagePreview');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
             imgPreview.src = e.target.result;
-            imgPreview.style.width = '100%'; // Ajuste o tamanho conforme necessário
-            imgPreview.style.height = 'auto';
-
-            // Adicione a imagem à seção do formulário ou a um local apropriado
-            document.getElementById('formSection').appendChild(imgPreview);
+            imagePreviewContainer.style.display = 'block'; // Mostra o contêiner da imagem
         };
         reader.readAsDataURL(file); // Lê o arquivo como uma URL
     }
+});
+
+// Adicionando evento para remover a imagem
+document.getElementById('removeImageButton').addEventListener('click', function () {
+    const imgPreview = document.getElementById('imagePreview');
+    const selfieUpload = document.getElementById('selfieUpload');
+    imgPreview.src = ''; // Limpa a imagem
+    selfieUpload.value = ''; // Limpa o campo de upload
+    document.getElementById('imagePreviewContainer').style.display = 'none'; // Esconde o contêiner
 });
